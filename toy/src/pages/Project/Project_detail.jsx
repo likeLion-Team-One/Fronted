@@ -1,6 +1,4 @@
 import React from "react";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoMdChatbubbles, IoIosBookmark } from "react-icons/io";
 import * as S from "../../styles/Project/styleProject_detail";
 
 const ProjectDetail = () => {
@@ -29,18 +27,12 @@ const ProjectDetail = () => {
   return (
     <S.Container>
       <S.Bar>
-        <img
-          src={`${process.env.PUBLIC_URL}/image/halfX.svg`}
-          onClick={() => window.history.back()}
-        />
+        <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} onClick={() => window.history.back()} />
         <div className="center">프로젝트 상세</div>
       </S.Bar>
 
       <S.ImageBox>
-        <S.Image
-          src={`${process.env.PUBLIC_URL}/image/PJImg.svg`}
-          alt="프로젝트"
-        />
+        <S.Image src={`${process.env.PUBLIC_URL}/image/PJImg.svg`} alt="프로젝트" />
         <S.IconRow>
           <S.CommentImg src={`${process.env.PUBLIC_URL}/image/comment.svg`} />
           <S.IconCount>1</S.IconCount>

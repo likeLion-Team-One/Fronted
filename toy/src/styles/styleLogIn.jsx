@@ -15,7 +15,7 @@ export const Header = styled.div`
   flex-shrink: 0;
 `;
 export const Logo = styled.img`
-  margin: 100px 0 40px;
+  margin: 170px 0px 50px 0px;
 `;
 
 export const Box = styled.input`

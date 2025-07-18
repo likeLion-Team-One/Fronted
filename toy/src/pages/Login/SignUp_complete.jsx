@@ -1,22 +1,32 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import * as SU from "../../styles/styleSignUp_complete";
-const SignUp_agree = () => {
+import * as S from "../../styles/StyledScrap.jsx";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
+
+const SignUp = () => {
   const navigate = useNavigate();
-  const GoProfile = () => {
-    navigate(`/Profile`);
+
+  const goBack = () => {
+    navigate(`/SignUp`);
   };
+
+  const GoLogin = () => {
+    navigate(`/Login`);
+  };
+
+  const location = useLocation();
+  const name = location.state?.name;
+
   return (
     <SU.Container>
-      <SU.Header>
-        <SU.BackBtn
-          src={`${process.env.PUBLIC_URL}/image/halfX.svg`}
-          alt="뒤로가기"
-          width="15"
-          height="27"
-        />
-        <SU.SUText>회원가입</SU.SUText>
-      </SU.Header>
+      <S.Bar>
+        <S.Back onClick={goBack}>
+          <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`}></img>
+        </S.Back>
+        <div className="center">회원가입</div>
+      </S.Bar>
       <SU.StatusBar>
         <SU.Status></SU.Status>
       </SU.StatusBar>
@@ -26,14 +36,15 @@ const SignUp_agree = () => {
         회원가입 완료
       </SU.Step>
       <SU.Congrat>
+        <SU.Confetti src={`${process.env.PUBLIC_URL}/image/image16.svg`} />
         <SU.C_Name>
-          김솜솜<span style={{ fontSize: "25px", color: "#000" }}>님,</span>
+          {name}
+          <span style={{ fontSize: "25px", color: "#000" }}>님,</span>
         </SU.C_Name>
         <SU.C_Text>가입을 축하드립니다!</SU.C_Text>
-        <SU.Confetti src={`${process.env.PUBLIC_URL}/images/confetti.svg`} />
       </SU.Congrat>
-      <SU.NextBtn onClick={GoProfile}>로그인 하러 가기</SU.NextBtn>
+      <SU.NextBtn onClick={GoLogin}>로그인 하러 가기</SU.NextBtn>
     </SU.Container>
   );
 };
-export default SignUp_agree;
+export default SignUp;

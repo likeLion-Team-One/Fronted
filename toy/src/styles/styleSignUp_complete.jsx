@@ -1,19 +1,18 @@
 import styled from "styled-components";
+
 export const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 393px;
   height: 850px;
   background: #fff;
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
 `;
 export const BackBtn = styled.img`
   position: absolute;
-
   left: 20px;
-
   height: 23px;
   flex-shrink: 0;
 `;
@@ -23,7 +22,8 @@ export const SUText = styled.div`
   flex-shrink: 0;
   color: #000;
   text-align: center;
-  font-family: "Hakgyoansim Puzzle OTF";
+  font-family: "HakgyoansimPuzzleTTF-Black";
+
   font-size: 25px;
   font-style: normal;
   font-weight: 900;
@@ -31,9 +31,9 @@ export const SUText = styled.div`
 `;
 export const Header = styled.div`
   flex-shrink: 0;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  display: flex;
 `;
 export const StatusBar = styled.div`
   width: 353px;
@@ -41,13 +41,13 @@ export const StatusBar = styled.div`
   flex-shrink: 0;
   border-radius: 10px;
   background: #f5f5f5;
+  margin: 16px 0 8px;
 `;
 export const Status = styled.div`
-  width: 355px;
+  width: 353px;
   height: 13px;
-  flex-shrink: 0;
   border-radius: 10px;
-  background: #5773ff;
+  background: #5061ff;
 `;
 export const Step = styled.div`
   width: 242px;
@@ -55,15 +55,16 @@ export const Step = styled.div`
   flex-shrink: 0;
   color: #5061ff;
   text-align: center;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 `;
+
 export const Congrat = styled.div`
   color: #000;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
@@ -75,9 +76,10 @@ export const Congrat = styled.div`
   margin-bottom: 71px;
 `;
 export const C_Name = styled.span`
+  margin-top: 30px;
   color: #5773ff;
   text-align: center;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -88,7 +90,7 @@ export const C_Name = styled.span`
 export const C_Text = styled.div`
   color: #000;
   text-align: center;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
@@ -114,14 +116,13 @@ export const NextBtn = styled.div`
   line-height: normal;
   margin-top: 54px;
 `;
+
 export const Confetti = styled.img`
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 247px;
   border-radius: 123.5px;
 
-  position: fixed;
-  top: 130px;
-  left: 0px;
+  top: 200px;
   z-index: 0; /* 텍스트 뒤로 깔림 */
 `;

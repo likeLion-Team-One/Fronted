@@ -1,5 +1,4 @@
 import React from "react";
-import { IoIosArrowBack } from "react-icons/io";
 import * as S from "../../styles/Group/styleGroup_detail";
 
 const MyGroupDetail = () => {
@@ -15,10 +14,7 @@ const MyGroupDetail = () => {
   return (
     <S.Container>
       <S.Bar>
-        <img
-          src={`${process.env.PUBLIC_URL}/image/halfX.svg`}
-          onClick={() => window.history.back()}
-        />
+        <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} onClick={() => window.history.back()} />
         <div className="center">그룹 정보</div>
       </S.Bar>
 
@@ -42,16 +38,11 @@ const MyGroupDetail = () => {
           <S.PJImg src={`${process.env.PUBLIC_URL}/image/GroupPJImg.svg`} />
           <div>
             <S.PJTitle>[공모전] | 제46회 제일기획 ∙∙∙</S.PJTitle>
-            <S.PJDetail>
-              2025년 3월, 제 46회 제일기획 아이디어 페스티벌 공모작을
-              모집합니다!
-            </S.PJDetail>
+            <S.PJDetail>2025년 3월, 제 46회 제일기획 아이디어 페스티벌 공모작을 모집합니다!</S.PJDetail>
           </div>
         </S.PJBox>
       </S.Section3>
-      <S.Section3
-        style={{ display: "flex", alignItems: "center", gap: "16px" }}
-      >
+      <S.Section3 style={{ display: "flex", alignItems: "center", gap: "16px" }}>
         <S.SectionTitle>파트</S.SectionTitle>
         <S.SectionText>기획, 촬영</S.SectionText>
       </S.Section3>

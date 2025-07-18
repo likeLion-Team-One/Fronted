@@ -5,15 +5,13 @@ export const Container = styled.div`
   width: 393px;
   height: 850px;
   background: #fff;
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
 `;
 export const BackBtn = styled.img`
   position: absolute;
-
   left: 20px;
-
   height: 23px;
   flex-shrink: 0;
 `;
@@ -23,7 +21,8 @@ export const SUText = styled.div`
   flex-shrink: 0;
   color: #000;
   text-align: center;
-  font-family: "Hakgyoansim Puzzle OTF";
+  font-family: "HakgyoansimPuzzleTTF-Black";
+
   font-size: 25px;
   font-style: normal;
   font-weight: 900;
@@ -41,13 +40,13 @@ export const StatusBar = styled.div`
   flex-shrink: 0;
   border-radius: 10px;
   background: #f5f5f5;
+  margin: 16px 0 8px;
 `;
 export const Status = styled.div`
-  width: 251px;
+  width: 240px;
   height: 13px;
-  flex-shrink: 0;
   border-radius: 10px;
-  background: #5773ff;
+  background: #5061ff;
 `;
 export const Step = styled.div`
   width: 242px;
@@ -55,7 +54,7 @@ export const Step = styled.div`
   flex-shrink: 0;
   color: #5061ff;
   text-align: center;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -66,7 +65,7 @@ export const Text = styled.div`
   height: 21px;
   flex-shrink: 0;
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -75,30 +74,45 @@ export const Text = styled.div`
 export const SUContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: left;
 `;
-export const Input = styled.input`
+export const Input = styled.div`
   width: 304px;
   height: 41px;
   flex-shrink: 0;
-  color: #969696;
-  text-align: left;
-  font-family: SUIT;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  border: transparent;
   border-bottom: 1px solid #5061ff;
-  margin-top: 5px;
-  margin-bottom: 10px;
+
+  input {
+    width: 230px;
+    height: 35px;
+    color: #969696;
+    text-align: left;
+    font-family: "SUIT-Regular";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+  }
+
+  button {
+    color: #5061ff;
+    text-align: center;
+    font-family: "SUIT-Regular";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    background: white;
+  }
 `;
 export const Marketing_Agree = styled.div`
   width: 140px;
   height: 21px;
   flex-shrink: 0;
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -132,9 +146,23 @@ export const NextBtn = styled.div`
   align-items: center; /* ← 여기가 수직 정렬 */
   background: #5061ff;
   color: #fff;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 20px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+`;
+
+export const Detail = styled.div`
+  margin: 0 auto;
+  color: #969696;
+  font-family: "SUIT-Regular";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+`;
+
+export const InputWrapper = styled.div`
+  margin: 5px 0px;
 `;

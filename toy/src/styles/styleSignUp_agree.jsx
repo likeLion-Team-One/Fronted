@@ -22,7 +22,7 @@ export const SUText = styled.div`
   flex-shrink: 0;
   color: #000;
   text-align: center;
-  font-family: "Hakgyoansim Puzzle OTF";
+  font-family: "HakgyoansimPuzzleTTF-Black";
 
   font-size: 25px;
   font-style: normal;
@@ -55,7 +55,7 @@ export const Step = styled.div`
   flex-shrink: 0;
   color: #5061ff;
   text-align: center;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -63,7 +63,7 @@ export const Step = styled.div`
 `;
 export const Text = styled.div`
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 800;
@@ -88,42 +88,43 @@ export const TermBox = styled.div`
 
   /* 스크롤바 */
   &::-webkit-scrollbar {
-    width: 13px;
+    width: 6px;
+    height: 5px;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent;
     border-radius: 10px;
-  }
+    background: #f5f5f5;
+  } /* 스크롤 바 배경*/
 
   &::-webkit-scrollbar-thumb {
     background: #5061ff;
     border-radius: 10px;
     width: 6px;
-  }
+  } /* 스크롤 바 손잡이*/
 `;
+
 export const TermContent = styled.div`
   padding: 12px 16px 12px 12px; /* 오른쪽 여백을 조금 더 */
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 13px;
   line-height: 20px;
 `;
 export const TermBtnGroup = styled.div`
   display: flex;
   gap: 16px;
-  margin-top: 10px;
-  display: flex;
+  margin: 10px 35px 10px 0px;
+  width: 100%;
   flex-direction: row;
-  align-items: right;
+  justify-content: flex-end;
 `;
 
 export const TermOption = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: row;
   gap: 6px;
   cursor: pointer;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 14px;
 `;
 
@@ -137,7 +138,7 @@ export const AgreeAll = styled.div`
   border: 1px solid #5061ff;
   background: #fff;
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -153,7 +154,7 @@ export const NextBtn = styled.div`
   align-items: center; /* ← 여기가 수직 정렬 */
   background: #5061ff;
   color: #fff;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
@@ -166,5 +167,6 @@ export const TermBtn = styled.div`
   flex-shrink: 0;
   border-radius: 2px;
   border: 0.5px solid #5061ff;
-  background: #fff;
+  background-color: ${(props) => (props.selected ? "#5061ff" : "#f5f5f5")};
+  color: ${(props) => (props.selected ? "#fff" : "#000")};
 `;
