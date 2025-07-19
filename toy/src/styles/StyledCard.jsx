@@ -103,6 +103,7 @@ export const Scroll = styled.div`
 `;
 
 export const Box = styled.div`
+  background: #b1beff;
   width: 136px;
   height: 160px;
   flex-shrink: 0;
@@ -121,7 +122,7 @@ line-height: normal;
 
 export const BContent = styled.div`
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -144,7 +145,7 @@ export const BoxBtn = styled.div`
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
   color: #fff;
   text-align: center;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 600;

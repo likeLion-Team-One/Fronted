@@ -1,27 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import BottomNav from "../Components/BottomNav.jsx";
 import * as P from "../../styles/styleProfile";
+import axios from "axios";
 
 const Profile = () => {
   const navigate = useNavigate();
   const GoEdit = () => {
     navigate(`/Profile_edit`);
   };
+
   return (
     <P.Container>
       <P.Header>
-        <P.BackBtn
-          src={`${process.env.PUBLIC_URL}/image/halfX.svg`}
-          alt="뒤로가기"
-        />
+        <P.BackBtn src={`${process.env.PUBLIC_URL}/image/halfX.svg`} alt="뒤로가기" />
         <P.PText>마이</P.PText>
       </P.Header>
       <P.ProfileBox>
-        <img
-          src={`${process.env.PUBLIC_URL}/image/Profile.svg`}
-          alt="Profile"
-        ></img>
+        <img src={`${process.env.PUBLIC_URL}/image/Profile.svg`} alt="Profile"></img>
         <P.LogIn>
           <P.LogIn_please>
             김솜솜 <P.BlackText>님</P.BlackText>

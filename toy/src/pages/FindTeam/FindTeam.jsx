@@ -2,72 +2,57 @@ import * as F from "../../styles/StyledFindTeam.jsx";
 import Profile from "../../pages/Components/Profile.jsx";
 import BottomNav from "../Components/BottomNav.jsx";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const people = [
-  {
-    id: 1,
-    info: {
-      name: "이동덕",
-      age: "만 24세",
-      location: "서울특별시 성북구",
-      job: "대학생(학부)",
-      status: "동덕여자대학교 3학년 재학",
-      major: "커뮤니케이션콘텐츠전공",
-      intro: "안녕하세요, 현재 광고 AE를 진로로 삼고 있는 이동덕이라고 합니다.",
-    },
-  },
-  {
-    id: 2,
-    info: {
-      name: "김동덕",
-      age: "만 24세",
-      location: "서울특별시 성북구",
-      job: "대학생(학부)",
-      status: "동덕여자대학교 3학년 재학",
-      major: "커뮤니케이션콘텐츠전공",
-    },
-  },
-];
-
-const Find = ({ num }) => {
+const Find = () => {
   const navigate = useNavigate();
   const goHome = () => {
     navigate(`/home`);
   };
+
   const goDetail = (person) => {
     console.log("전달되는 데이터:", person);
     navigate(`/detail`, { state: { person } });
   };
+
+  const [userList, setUserList] = useState([]);
+  const [totalUser, setTotalUser] = useState("");
+  const token = localStorage.getItem("access_token");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/finds/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUserList(response.data.profiles);
+        setTotalUser(response.data.totalUsers);
+      } catch (error) {
+        console.log("Error fetching data: ", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <F.Container>
       <F.Bar>
-        <img
-          src={`${process.env.PUBLIC_URL}/image/halfX.svg`}
-          onClick={goHome}
-        />
+        <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} onClick={goHome} />
         <div className="center">팀원 찾기</div>
-        <img
-          src={`${process.env.PUBLIC_URL}/image/heart.svg`}
-          style={{ width: "26px" }}
-        />
+        <img src={`${process.env.PUBLIC_URL}/image/heart.svg`} style={{ width: "26px" }} />
       </F.Bar>
       <F.LogBox>
         <F.Search>
           <input></input>
-          <img
-            src={`${process.env.PUBLIC_URL}/image/search.svg`}
-            alt="search"
-          />
+          <img src={`${process.env.PUBLIC_URL}/image/search.svg`} alt="search" />
         </F.Search>
-        <F.Inform>{num}명의 팀원</F.Inform>
+        <F.Inform>{totalUser}명의 팀원</F.Inform>
         <F.ProfileWrapper>
-          {people.map((person) => (
-            <Profile
-              key={person.id}
-              name={person.info.name}
-              status={person.info.status}
-              onClick={() => goDetail(person)}
-            />
+          {userList.map((e) => (
+            <Profile name={e.name} status={e.job} onClick={() => goDetail(e)} />
           ))}
         </F.ProfileWrapper>
       </F.LogBox>

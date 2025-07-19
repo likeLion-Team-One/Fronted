@@ -24,7 +24,7 @@ export const Box = styled.input`
   margin-top: 8px;
   flex-shrink: 0;
   border-radius: 10px;
-  border: 1px solid #5061ff;
+  border: 1px solid ${({ hasError }) => (hasError ? "#E01B1B" : "#5061ff")};
   padding: 0 16px;
   font-size: 16px;
   outline: none;
@@ -32,7 +32,7 @@ export const Box = styled.input`
 `;
 export const Text = styled.div`
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-weight: 700;
   margin-top: 24px;
@@ -49,7 +49,7 @@ export const Btn = styled.button`
 
   margin-top: 41px;
   border: none;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 16px;
   font-weight: 600;
   box-sizing: border-box;
@@ -59,4 +59,16 @@ export const SignUpBtn = styled(Btn)`
   background: #fff;
   color: #5061ff;
   border: 1px solid #5061ff;
+`;
+
+export const errorMsg = styled.div`
+  font-family: "SUIT-Regular";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #e01b1b;
+  width: 353px;
+  text-align: left;
+  padding: 10px 20px;
 `;

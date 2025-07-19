@@ -80,7 +80,7 @@ export const Input = styled.div`
   width: 304px;
   height: 41px;
   flex-shrink: 0;
-  border-bottom: 1px solid #5061ff;
+  border-bottom: 1px solid ${({ hasError }) => (hasError ? "#E01B1B" : "#5061ff")};
 
   input {
     width: 230px;
@@ -165,4 +165,13 @@ export const Detail = styled.div`
 
 export const InputWrapper = styled.div`
   margin: 5px 0px;
+`;
+
+export const errorMsg = styled.div`
+  color: #e01b1b;
+  font-family: "SUIT-Regular";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 `;

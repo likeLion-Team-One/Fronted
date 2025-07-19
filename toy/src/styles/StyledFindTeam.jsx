@@ -116,7 +116,7 @@ export const ProfileStatus = styled.div`
   top: 55px;
   left: 90px;
   color: #000;
-  font-family: "SUIT";
+  font-family: "SUIT-Regular";
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -139,7 +139,7 @@ export const AddBtn = styled.div`
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
   color: #000;
   text-align: center;
-  font-family: "SUIT";
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -161,7 +161,7 @@ export const LogBox = styled.div`
   height: 722px;
   flex-shrink: 0;
   color: #000;
-  font-family: "SUIT";
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -195,7 +195,7 @@ export const Inform = styled.div`
   margin-left: 25px;
   margin-top: 10px;
   text-align: left;
-  font-family: "SUIT";
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -215,7 +215,7 @@ export const StatusTable = styled.div`
   .category {
     padding: 8px;
     color: #000;
-    font-family: "SUIT";
+    font-family: "SUIT-Regular";
     font-size: 15px;
     font-style: normal;
     font-weight: 700;
@@ -224,7 +224,7 @@ export const StatusTable = styled.div`
 
   .content {
     color: #000;
-    font-family: "SUIT";
+    font-family: "SUIT-Regular";
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -245,7 +245,7 @@ export const UserIntro = styled.div`
 
   div {
     padding: 10px;
-    font-family: "SUIT";
+    font-family: "SUIT-Regular";
     font-size: 15px;
     font-style: normal;
     font-weight: 400;

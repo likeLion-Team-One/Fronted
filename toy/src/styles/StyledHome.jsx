@@ -84,6 +84,7 @@ export const Text = styled.div`
 export const rowScroll = styled.div`
   display: flex;
   align-items: column;
+  gap: 10px;
 `;
 
 export const Scroll = styled.div`
