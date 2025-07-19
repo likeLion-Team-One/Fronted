@@ -1,4 +1,5 @@
 import React from "react";
+import * as M from "../../styles/StyledMenu.jsx";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import BottomNav from "../Components/BottomNav.jsx";
@@ -11,12 +12,19 @@ const Profile = () => {
     navigate(`/Profile_edit`);
   };
 
+  const goHome = () => {
+    navigate(`/home`);
+  };
+
   return (
     <P.Container>
-      <P.Header>
-        <P.BackBtn src={`${process.env.PUBLIC_URL}/image/halfX.svg`} alt="뒤로가기" />
-        <P.PText>마이</P.PText>
-      </P.Header>
+      <M.Bar>
+        <M.DeleteBtn onClick={goHome}>
+          <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} />
+        </M.DeleteBtn>
+        <M.Title>마이</M.Title>
+        <div style={{ width: "20px" }}></div>
+      </M.Bar>
       <P.ProfileBox>
         <img src={`${process.env.PUBLIC_URL}/image/Profile.svg`} alt="Profile"></img>
         <P.LogIn>

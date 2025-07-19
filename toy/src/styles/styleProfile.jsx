@@ -16,19 +16,19 @@ export const BackBtn = styled.img`
   left: 20px;
   height: 23px;
   flex-shrink: 0;
-  width: 15px; /* ✅ 수정: width 속성 잘못된 형태로 되어 있었음 */
+  width: 15px;
 `;
 
 export const PText = styled.div`
   width: 125px;
-  height: 36px;
+  height: 40px;
   flex-shrink: 0;
   color: #000;
   text-align: center;
-  font-family: "Hakgyoansim Puzzle OTF";
+  font-family: "HakgyoansimPuzzleTTF-Black";
   font-size: 25px;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 300;
   line-height: normal;
 `;
 
@@ -74,7 +74,7 @@ export const LogIn_please = styled.div`
   height: 23px;
   flex-shrink: 0;
   color: #5061ff;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -88,7 +88,7 @@ export const BlackText = styled.span`
 export const BenefitText = styled.div`
   margin-top: 4px;
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 14px;
   font-weight: 400;
 `;
@@ -104,7 +104,7 @@ export const Edit = styled.div`
   justify-content: center;
   color: #fff;
   text-align: center;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 800;
@@ -117,7 +117,7 @@ export const Stories = styled.div`
   margin-top: 40px;
   width: 353px;
   color: #5061ff;
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -126,7 +126,7 @@ export const Stories = styled.div`
 `;
 
 export const StoriesBox = styled.div`
-  width: 353px; /* ✅ 더 줄임: 305 + padding(24*2) = 시각적 총 353px */
+  width: 353px;
   padding: 16px 0px;
   border-radius: 10px;
   background: rgba(80, 97, 255, 0.05);
@@ -146,7 +146,7 @@ export const StoryRow = styled.div`
 
 export const Story = styled.div`
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
@@ -161,7 +161,7 @@ export const Navigate = styled.div`
   height: 70px;
   color: #969696;
   text-align: center;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
