@@ -59,10 +59,9 @@ export const Search = styled.div`
 export const ProfileWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 393px;
-  margin: 20px;
-  gap: 30px;
+  justify-content: space-between;
+  width: 370px;
+  padding: 10px 30px;
 `;
 
 export const ProfileBox = styled.div`

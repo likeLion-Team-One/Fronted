@@ -1,4 +1,3 @@
-import React from "react";
 import * as M from "../../styles/StyledMenu.jsx";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -16,6 +15,25 @@ const Profile = () => {
     navigate(`/home`);
   };
 
+  const [user, setUser] = useState("");
+  const token = localStorage.getItem("access_token");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/my_page/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUser(response.data);
+      } catch (error) {
+        console.log("Error fetching data: ", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <P.Container>
       <M.Bar>
@@ -29,7 +47,7 @@ const Profile = () => {
         <img src={`${process.env.PUBLIC_URL}/image/Profile.svg`} alt="Profile"></img>
         <P.LogIn>
           <P.LogIn_please>
-            김솜솜 <P.BlackText>님</P.BlackText>
+            {user.name} <P.BlackText>님</P.BlackText>
           </P.LogIn_please>
           <P.BenefitText>나의 혜택</P.BenefitText>
         </P.LogIn>
