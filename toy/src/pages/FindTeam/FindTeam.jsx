@@ -20,6 +20,14 @@ const Find = () => {
   const [totalUser, setTotalUser] = useState("");
   const token = localStorage.getItem("access_token");
 
+  function chunkArray(array, size) {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
+    }
+    return result;
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -50,11 +58,13 @@ const Find = () => {
           <img src={`${process.env.PUBLIC_URL}/image/search.svg`} alt="search" />
         </F.Search>
         <F.Inform>{totalUser}명의 팀원</F.Inform>
-        <F.ProfileWrapper>
-          {userList.map((e) => (
-            <Profile name={e.name} status={e.job} onClick={() => goDetail(e)} />
-          ))}
-        </F.ProfileWrapper>
+        {chunkArray(userList, 2).map((group, idx) => (
+          <F.ProfileWrapper key={idx}>
+            {group.map((e, i) => (
+              <Profile key={e.id || e.name || i} name={e.name} status={e.job} onClick={() => goDetail(e)} />
+            ))}
+          </F.ProfileWrapper>
+        ))}
       </F.LogBox>
       <BottomNav idx={1}></BottomNav>
     </F.Container>

@@ -112,7 +112,7 @@ const Profile_edit = () => {
       })
       .catch((error) => {
         if (error.response && error.response.status === 400) {
-          console.log("error");
+          console.log("error", error.response.data);
         }
       });
   };
