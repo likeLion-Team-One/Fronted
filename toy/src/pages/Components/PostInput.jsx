@@ -12,17 +12,7 @@ const PostInput = ({ title, height, Theight, hint }) => {
   );
 };
 
-const PostSelect = ({
-  title,
-  height,
-  Theight,
-  width,
-  Uwidth,
-  options = [],
-  value,
-  onChange,
-  error,
-}) => {
+const PostSelect = ({ title, height, Theight, width, Uwidth, options = [], value, onChange, error }) => {
   const [showOptions, setShowOptions] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -39,7 +29,10 @@ const PostSelect = ({
 
   return (
     <P.IWrapper>
-      <P.ITitle>{title}</P.ITitle>
+      <P.ITitle>
+        {title}
+        <span style={{ color: "#E01B1B" }}>*</span>
+      </P.ITitle>
       <P.IContent
         height={height}
         Theight={Theight}
@@ -85,7 +78,10 @@ const PostSelect = ({
 const PostDate = ({ title, type, width, Twidth }) => {
   return (
     <P.IWrapper>
-      <P.ITitle>{title}</P.ITitle>
+      <P.ITitle>
+        {title}
+        <span style={{ color: "#E01B1B" }}>*</span>
+      </P.ITitle>
       <div style={{ display: "flex", flexDirection: "row", gap: "30px" }}>
         {type.map((t, idx) => (
           <div key={idx}>

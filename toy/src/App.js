@@ -33,13 +33,6 @@ import Progress from "./pages/Group/Progress";
 import CreateGroup from "./pages/Group/Create_group";
 
 function App() {
-  /*const [dataList, setDataList] = useState([]);
-
-  useEffect(() => {
-    setDataList(data);
-  }, []);
-  */
-
   return (
     <BrowserRouter>
       <Routes>
@@ -48,20 +41,24 @@ function App() {
         <Route path="/signup_agree" element={<SignUp_agree />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signup_complete" element={<SignUp_complete />} />
+
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile_edit" element={<Profile_edit />} />
+
         <Route path="/project" element={<Project />} />
         <Route path="/project_detail" element={<ProjectDetail />} />
+
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/search" element={<Search />} />
         <Route path="/scrap" element={<Scrap />} />
+
         <Route path="/first" element={<First />} />
         <Route path="/post" element={<Post />} />
         <Route path="/temp" element={<Temp />} />
         <Route path="/find" element={<Find />} />
         <Route path="/addGroup" element={<AddGroup />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:user_id" element={<Detail />} />
         <Route path="/group" element={<Group />} />
         <Route path="/mygroup" element={<MyGroup />} />
         <Route path="/group_detail" element={<GroupDetail />} />

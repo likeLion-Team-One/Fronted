@@ -16,7 +16,8 @@ export const Card = styled.div`
 export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Header = styled.div`
@@ -45,7 +46,7 @@ export const People = styled.div`
 export const Text = styled.div`
   margin-top: 8px;
   color: ${({ hdColor }) => hdColor || "#5061ff"};
-  font-family: "BM JUA_OTF";
+  font-family: "BMJUA";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -61,7 +62,7 @@ export const Icon = styled.div`
 `;
 
 export const ProgressLabel = styled.div`
-  font-family: "SUIT";
+  font-family: "SUIT-Regular";
   font-size: 15px;
   color: #fff;
   margin-top: 12px;
@@ -112,12 +113,13 @@ export const Box = styled.div`
 `;
 
 export const BTitle = styled.div`
-color: #5061ff;
-font-family: font-family: "BMJUA";;
-font-size: 25px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  color: #5061ff;
+  font-family: "BMJUA";
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
 `;
 
 export const BContent = styled.div`
@@ -127,6 +129,7 @@ export const BContent = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding: 0px 10px;
 `;
 
 export const BoxBtn = styled.div`

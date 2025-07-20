@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import * as N from "../../styles/StyledBottomNav";
 import { ReactComponent as HomeIcon } from "../../image/Navigate/Home.svg";
@@ -63,11 +62,7 @@ const BottomNav = ({ idx = 0 }) => {
             flex: 1,
           }}
         >
-          {selected === i ? (
-            <ActiveIcon width={24} height={24} />
-          ) : (
-            <Icon width={24} height={24} />
-          )}
+          {selected === i ? <ActiveIcon width={24} height={24} /> : <Icon width={24} height={24} />}
           <span
             style={{
               color: selected === i ? ACTIVE_COLOR : DEFAULT_COLOR,
