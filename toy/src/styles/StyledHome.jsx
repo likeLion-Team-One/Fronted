@@ -82,9 +82,12 @@ export const Text = styled.div`
 `;
 
 export const rowScroll = styled.div`
+  width: 393px;
   display: flex;
-  align-items: column;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0px 20px;
+  overflow-x: hidden;
 `;
 
 export const Scroll = styled.div`

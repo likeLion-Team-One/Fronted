@@ -42,7 +42,7 @@ export const ProfileBox = styled.div`
 `;
 export const Text = styled.div`
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -66,6 +66,8 @@ export const TextArea = styled.textarea`
   border-radius: 10px;
   border: 1px solid #5773ff;
   background: #fff;
+  font-family: "SUIT-Regular";
+  font-size: 17.5px;
 `;
 export const EditContainer = styled.div`
   display: flex;
@@ -133,5 +135,12 @@ export const DropdownOption = styled.div`
   cursor: pointer;
   &:hover {
     background: #f0f6ff;
+  }
+`;
+export const Scroll = styled.div`
+  overflow-y: auto;
+  height: 750px;
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;

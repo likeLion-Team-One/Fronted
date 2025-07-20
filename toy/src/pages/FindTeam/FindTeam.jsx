@@ -11,9 +11,9 @@ const Find = () => {
     navigate(`/home`);
   };
 
-  const goDetail = (person) => {
-    console.log("전달되는 데이터:", person);
-    navigate(`/detail`, { state: { person } });
+  const goDetail = (user_id) => {
+    console.log("전달되는 데이터:", user_id);
+    navigate(`/detail/${user_id}`);
   };
 
   const [userList, setUserList] = useState([]);
@@ -38,6 +38,7 @@ const Find = () => {
         });
         setUserList(response.data.profiles);
         setTotalUser(response.data.totalUsers);
+        console.log(response.data.profiles);
       } catch (error) {
         console.log("Error fetching data: ", error);
       }
@@ -61,7 +62,7 @@ const Find = () => {
         {chunkArray(userList, 2).map((group, idx) => (
           <F.ProfileWrapper key={idx}>
             {group.map((e, i) => (
-              <Profile key={e.id || e.name || i} name={e.name} status={e.job} onClick={() => goDetail(e)} />
+              <Profile key={e.id || e.name || i} name={e.name} status={e.job} user_id={e.id} onClick={() => goDetail(e.id)} />
             ))}
           </F.ProfileWrapper>
         ))}

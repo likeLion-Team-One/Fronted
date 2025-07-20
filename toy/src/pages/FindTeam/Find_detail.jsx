@@ -1,5 +1,5 @@
 import * as F from "../../styles/StyledFindTeam.jsx";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import StatusBox from "../Components/StatusBox.jsx";
 import { ReactComponent as Heart } from "../../image/heart.svg";
@@ -13,6 +13,8 @@ const Detail = () => {
   };
 
   const token = localStorage.getItem("access_token");
+  const [person, setPerson] = useState(null);
+  const { user_id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,46 +24,52 @@ const Detail = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        const person = response.data;
+        setPerson(response.data);
       } catch (error) {
         console.log("Error fetching data: ", error);
       }
     };
     fetchData();
-  }, []);
+  }, [user_id, token]);
 
   const goAdd = (e) => {
     e.stopPropagation(); // 상위 onClick 방지!
     navigate(`/addgroup`);
   };
 
-  return (
-    <F.Container>
-      <F.Bar>
-        <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} onClick={goback} />
-        <div className="center">팀원 정보</div>
-      </F.Bar>
-      <F.LogBox>
-        <img className="picture" src={`${process.env.PUBLIC_URL}/image/profile.png`} />
-        <Heart
-          style={{
-            zIndex: "10",
-            position: "absolute",
-            right: "17",
-            top: "120",
-          }}
-        ></Heart>
+  if (!person) {
+    return <div>로딩중...</div>;
+  }
 
-        <F.ProfileInform>
-          <F.ProfileNameBig>{person.name}</F.ProfileNameBig>
-          <F.AddBtnSmall style={{ width: "69px" }} onClick={goAdd}>
-            그룹 추가
-          </F.AddBtnSmall>
-          <StatusBox info={person.info}></StatusBox>
-        </F.ProfileInform>
-      </F.LogBox>
-    </F.Container>
-  );
+  if (person) {
+    return (
+      <F.Container>
+        <F.Bar>
+          <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} onClick={goback} />
+          <div className="center">팀원 정보</div>
+        </F.Bar>
+        <F.LogBox>
+          <img className="picture" src={`${process.env.PUBLIC_URL}/image/profile.png`} />
+          <Heart
+            style={{
+              zIndex: "10",
+              position: "absolute",
+              right: "17",
+              top: "120",
+            }}
+          ></Heart>
+
+          <F.ProfileInform>
+            <F.ProfileNameBig>{person.name}</F.ProfileNameBig>
+            <F.AddBtnSmall style={{ width: "69px" }} onClick={goAdd}>
+              그룹 추가
+            </F.AddBtnSmall>
+            <StatusBox info={person}></StatusBox>
+          </F.ProfileInform>
+        </F.LogBox>
+      </F.Container>
+    );
+  }
 };
 
 export default Detail;

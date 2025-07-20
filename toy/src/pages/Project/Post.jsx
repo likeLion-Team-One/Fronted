@@ -36,6 +36,7 @@ const Post = () => {
 
   const handleSave = () => {
     setModalOpen(false);
+    navigate(`/home`);
   };
 
   const goProject = () => {
@@ -50,46 +51,28 @@ const Post = () => {
     <P.Container>
       <P.Bar>
         <P.DeleteBtn>
-          <img
-            src={`${process.env.PUBLIC_URL}/image/delete.svg`}
-            onClick={() => setModalOpen(true)}
-          />
+          <img src={`${process.env.PUBLIC_URL}/image/delete.svg`} onClick={() => setModalOpen(true)} />
         </P.DeleteBtn>
         <P.Title>글쓰기</P.Title>
         <P.Temp onClick={goTemp}>임시 저장</P.Temp>
       </P.Bar>
       <P.Scroll>
-        <PostInput title="제목 *"></PostInput>
-        <PostSelect
-          title="프로젝트 유형 *"
-          options={ProjectUnit}
-          value={formData.projectUnit}
-          Uwidth="330px"
-          onChange={(val) => handleInputChange("projectUnit", val)}
-        ></PostSelect>
-        <PostSelect
-          title="프로젝트 분야 *"
-          options={ProjectType}
-          value={formData.projectType}
-          Uwidth="330px"
-          onChange={(val) => handleInputChange("projectType", val)}
+        <PostInput
+          title={
+            <>
+              제목 <span style={{ color: "#E01B1B" }}>*</span>
+            </>
+          }
         />
-        <PostInput title="프로젝트 대상 *"></PostInput>
-        <PostDate
-          title="기간 *"
-          type={DateType}
-          width="160px"
-          Twidth=" 140px"
-        ></PostDate>
-        <PostInput title="주체기관 *" hint="기관/단체/관리자명"></PostInput>
+        <PostSelect title="프로젝트 유형 " options={ProjectUnit} value={formData.projectUnit} Uwidth="330px" onChange={(val) => handleInputChange("projectUnit", val)}></PostSelect>
+        <PostSelect title="프로젝트 분야 " options={ProjectType} value={formData.projectType} Uwidth="330px" onChange={(val) => handleInputChange("projectType", val)} />
+        <PostInput title="프로젝트 대상 "></PostInput>
+        <PostDate title="기간 " type={DateType} width="160px" Twidth=" 140px"></PostDate>
+        <PostInput title="주체기관 " hint="기관/단체/관리자명"></PostInput>
         <PostInput title="세부설명" height="170px" Theight="140px"></PostInput>
         <P.rowScroll>
           <P.PictureBox className="main">
-            <img
-              src={`${process.env.PUBLIC_URL}/image/camera.svg`}
-              width="32px"
-            />
-            4 / 10
+            <img src={`${process.env.PUBLIC_URL}/image/camera.svg`} width="32px" />4 / 10
           </P.PictureBox>
           <P.PictureBox className="picture"></P.PictureBox>
         </P.rowScroll>
@@ -108,7 +91,12 @@ const Post = () => {
             작성 중인 글을 저장할까요?
             <P.ModalButtonRow>
               <P.ModalButton onClick={handleSave}>저장</P.ModalButton>
-              <P.ModalButton onClick={() => setModalOpen(false)}>
+              <P.ModalButton
+                onClick={() => {
+                  setModalOpen(false);
+                  navigate(`/home`);
+                }}
+              >
                 취소
               </P.ModalButton>
             </P.ModalButtonRow>

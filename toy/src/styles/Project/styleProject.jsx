@@ -64,18 +64,23 @@ export const ProjectContainer = styled.div`
 `;
 
 export const Search = styled.div`
-  width: 353px;
+  display: flex;
+  align-items: center;
+  width: 313px;
   height: 36px;
+  flex-shrink: 0;
   border-radius: 20px;
   border: 1px solid #5061ff;
   background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  padding: 0 9px;
-  margin-top: 22px;
-  margin-bottom: 18px;
-`;
+  padding: 0 15px;
+  margin: 15px;
+  justify-content: space-between;
+
+  input {
+    border: none;
+    outline: none;
+  }
+`; // 검색바
 
 export const CategoryBox = styled.div`
   width: 313;

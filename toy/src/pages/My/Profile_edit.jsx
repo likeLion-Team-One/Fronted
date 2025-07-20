@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as M from "../../styles/StyledMenu.jsx";
 import * as P from "../../styles/styleProfile_edit";
 import * as SU from "../../styles/styleSignUp";
 import axios from "axios";
 
 const Profile_edit = () => {
   const navigate = useNavigate();
+  const goBack = () => {
+    navigate(`/Profile`);
+  };
+
   const [selected, setSelected] = useState(null);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState("선택하세요");
 
   const toggleDropdown = () => setIsOpen(!isOpen);
-
-  const handleSelect = (option) => {
-    setSelectedLocation(option);
-    setIsOpen(false);
-  };
 
   const onChangeName = (e) => {
     const value = e.target.value;
@@ -119,80 +118,84 @@ const Profile_edit = () => {
 
   return (
     <P.Container>
-      <P.Header>
-        <P.BackBtn onClick={() => window.history.back()} src={`${process.env.PUBLIC_URL}/image/halfX.svg`} alt="뒤로가기" />
-        <P.PText>프로필 수정</P.PText>
-      </P.Header>
+      <M.Bar>
+        <M.DeleteBtn onClick={goBack}>
+          <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} />
+        </M.DeleteBtn>
+        <M.Title>프로필 생성</M.Title>
+        <div style={{ width: "20px" }}></div>
+      </M.Bar>
 
-      <P.ProfileBox>
-        <img src={`${process.env.PUBLIC_URL}/image/Profile.svg`} alt="Profile" />
-      </P.ProfileBox>
+      <P.Scroll>
+        <P.ProfileBox>
+          <img src={`${process.env.PUBLIC_URL}/image/Profile.svg`} alt="Profile" />
+        </P.ProfileBox>
 
-      <P.EditContainer>
-        <P.Text>
-          이름<span style={{ color: "#E01B1B" }}>*</span>
-        </P.Text>
-        <P.Box name="name" value={name} onChange={onChangeName} />
+        <P.EditContainer>
+          <P.Text>
+            이름 <span style={{ color: "#E01B1B" }}>*</span>
+          </P.Text>
+          <P.Box name="name" value={name} onChange={onChangeName} />
 
-        <P.Text>
-          성별<span style={{ color: "#E01B1B" }}>*</span>
-        </P.Text>
-        <P.Wrapper name="gender" value={gender}>
-          <P.GenderOption selected={selected === "male"} onClick={() => setSelected("male")}>
-            남성
-          </P.GenderOption>
-          <P.GenderOption selected={selected === "female"} onClick={() => setSelected("female")}>
-            여성
-          </P.GenderOption>
-        </P.Wrapper>
+          <P.Text>
+            성별 <span style={{ color: "#E01B1B" }}>*</span>
+          </P.Text>
+          <P.Wrapper name="gender" value={gender}>
+            <P.GenderOption selected={selected === "male"} onClick={() => setSelected("male")}>
+              남성
+            </P.GenderOption>
+            <P.GenderOption selected={selected === "female"} onClick={() => setSelected("female")}>
+              여성
+            </P.GenderOption>
+          </P.Wrapper>
 
-        <P.Text>
-          거주지<span style={{ color: "#E01B1B" }}>*</span>
-        </P.Text>
-        <P.DropdownWrapper>
-          <P.DropdownBox onClick={toggleDropdown}>
-            {region ? locations.find((opt) => opt.code === region)?.name : "선택하세요"}
-            <P.Arrow isOpen={isOpen}>▼</P.Arrow>
-          </P.DropdownBox>
+          <P.Text>
+            거주지 <span style={{ color: "#E01B1B" }}>*</span>
+          </P.Text>
+          <P.DropdownWrapper>
+            <P.DropdownBox onClick={toggleDropdown}>
+              {region ? locations.find((opt) => opt.code === region)?.name : "선택하세요"}
+              <P.Arrow isOpen={isOpen}>▼</P.Arrow>
+            </P.DropdownBox>
 
-          {isOpen && (
-            <P.DropdownOptions>
-              {locations.map((opt) => (
-                <P.DropdownOption
-                  key={opt.code}
-                  onClick={() => {
-                    setRegion(opt.code); // 코드 저장
-                    setIsOpen(false);
-                  }}
-                >
-                  {opt.name}
-                </P.DropdownOption>
-              ))}
-            </P.DropdownOptions>
-          )}
-        </P.DropdownWrapper>
+            {isOpen && (
+              <P.DropdownOptions>
+                {locations.map((opt) => (
+                  <P.DropdownOption
+                    key={opt.code}
+                    onClick={() => {
+                      setRegion(opt.code); // 코드 저장
+                      setIsOpen(false);
+                    }}
+                  >
+                    {opt.name}
+                  </P.DropdownOption>
+                ))}
+              </P.DropdownOptions>
+            )}
+          </P.DropdownWrapper>
 
-        <P.Text>
-          나이<span style={{ color: "#E01B1B" }}>*</span>
-        </P.Text>
-        <P.Box name="age" value={age} onChange={onChangeAge} />
+          <P.Text>
+            나이 <span style={{ color: "#E01B1B" }}>*</span>
+          </P.Text>
+          <P.Box name="age" value={age} onChange={onChangeAge} />
 
-        <P.Text>
-          직업<span style={{ color: "#E01B1B" }}>*</span>
-        </P.Text>
-        <P.Box name="job" value={job} onChange={onChangeJob} />
+          <P.Text>
+            직업 <span style={{ color: "#E01B1B" }}>*</span>
+          </P.Text>
+          <P.Box name="job" value={job} onChange={onChangeJob} />
 
-        <P.Text>학력</P.Text>
-        <P.Box name="education" value={education} onChange={onChangeEducation} />
+          <P.Text>학력</P.Text>
+          <P.Box name="education" value={education} onChange={onChangeEducation} />
 
-        <P.Text>전공</P.Text>
-        <P.Box name="major" value={major} onChange={onChangeMajor} />
+          <P.Text>전공</P.Text>
+          <P.Box name="major" value={major} onChange={onChangeMajor} />
 
-        <P.Text>세부 설명</P.Text>
-        <P.TextArea name="detail" value={detail} onChange={onChangeDetail} />
-
-        <SU.NextBtn onClick={handleSignupBtn}>다음</SU.NextBtn>
-      </P.EditContainer>
+          <P.Text>세부 설명</P.Text>
+          <P.TextArea name="detail" value={detail} onChange={onChangeDetail} />
+        </P.EditContainer>
+      </P.Scroll>
+      <SU.NextBtn onClick={handleSignupBtn}>다음</SU.NextBtn>
     </P.Container>
   );
 };

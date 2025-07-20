@@ -3,6 +3,7 @@ import styled from "styled-components";
 // 전체 페이지 컨테이너
 export const Container = styled.div`
   position: relative;
+
   margin: 0 auto;
   width: 393px;
   min-height: 100vh;
@@ -220,7 +221,7 @@ export const PlusIcon = styled.img`
 `;
 // 전체 그룹 컨테이너
 export const GroupContainer = styled.div`
-  width: 100%;
+  width: 393px;
   padding: 0 20px;
   background: linear-gradient(180deg, rgba(220, 234, 255, 0.3) 0%, #fff 100%);
   flex: 1;
