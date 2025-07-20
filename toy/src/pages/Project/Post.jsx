@@ -1,7 +1,7 @@
 import * as P from "../../styles/StyledPost.jsx";
 import PostInput, { PostDate, PostSelect } from "../Components/PostInput.jsx";
 import { useNavigate } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Post = () => {
   const ProjectUnit = ["조별과제", "공모전/대회", "대외활동", "기타"];
@@ -21,11 +21,9 @@ const Post = () => {
   });
   // 폼 상태 저장
 
-  const [errors, setErrors] = useState({});
-  // 에러 상태 저장
-
   const [modalOpen, setModalOpen] = useState(false);
   const modalBackground = useRef();
+  const token = localStorage.getItem("access_token");
 
   const handleInputChange = (name, value) => {
     setFormData((prev) => ({
@@ -39,13 +37,25 @@ const Post = () => {
     navigate(`/home`);
   };
 
-  const goProject = () => {
-    navigate(`/projext`);
-  };
-
   const goTemp = () => {
     navigate(`/temp`);
   };
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.post("/api/token/refresh/", {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       });
+  //       console.log(response.data.profiles);
+  //     } catch (error) {
+  //       console.log("Error fetching data: ", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <P.Container>
