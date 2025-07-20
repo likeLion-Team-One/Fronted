@@ -5,11 +5,8 @@ const GroupCreate = () => {
   return (
     <S.Container>
       <S.Bar>
-        <img
-          src={`${process.env.PUBLIC_URL}/image/halfX.svg`}
-          onClick={() => window.history.back()}
-        />
-        <div className="center">프로젝트 상세</div>
+        <img src={`${process.env.PUBLIC_URL}/image/halfX.svg`} onClick={() => window.history.back()} />
+        <div className="center">그룹 생성</div>
       </S.Bar>
 
       <S.Form>
@@ -31,22 +28,14 @@ const GroupCreate = () => {
         <S.Label>팀원</S.Label>
         <S.TeamList>
           <S.AddMember>
-            <S.PlusImg
-              src={`${process.env.PUBLIC_URL}/image/plusIcon.svg`}
-            ></S.PlusImg>
+            <S.PlusImg src={`${process.env.PUBLIC_URL}/image/plusIcon.svg`}></S.PlusImg>
             <S.Addtext>4/10</S.Addtext>
           </S.AddMember>
 
           <S.Member>
-            <S.MemberCircle
-              src={`${process.env.PUBLIC_URL}/image/addMember.svg`}
-            />
-            <S.MemberCircle
-              src={`${process.env.PUBLIC_URL}/image/addMember.svg`}
-            />
-            <S.MemberCircle
-              src={`${process.env.PUBLIC_URL}/image/addMember.svg`}
-            />
+            <S.MemberCircle src={`${process.env.PUBLIC_URL}/image/addMember.svg`} />
+            <S.MemberCircle src={`${process.env.PUBLIC_URL}/image/addMember.svg`} />
+            <S.MemberCircle src={`${process.env.PUBLIC_URL}/image/addMember.svg`} />
           </S.Member>
         </S.TeamList>
       </S.Form>

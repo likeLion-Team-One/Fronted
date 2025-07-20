@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 393px;
+  height: 852px;
   min-height: 100vh;
   background: #fff;
   display: flex;
@@ -48,19 +49,27 @@ export const Form = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
 `;
+
 export const Label = styled.label`
+  width: 353px;
   color: #000;
-  font-family: SUIT;
+  font-family: "SUIT-Regular";
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 12px 0 5px;
+  padding: 5px 30px;
+  text-align: left;
 `;
 
 export const Input = styled.input`
-  width: 353px;
+  width: 100%;
+  max-width: 353px;
   height: 55px;
   padding: 0 12px;
   border-radius: 10px;
@@ -114,11 +123,12 @@ export const Textarea = styled.textarea`
 
 // 팀원 리스트
 export const TeamList = styled.div`
-  width: 100%;
+  width: 353px;
   display: flex;
   gap: 12px;
   overflow-x: auto;
   padding-bottom: 8px;
+  scrollbar-width: none;
 `;
 
 // 멤버 추가 버튼
@@ -156,6 +166,9 @@ export const MemberCircle = styled.img`
 export const SubmitButton = styled.button`
   width: 353px;
   height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 24px 0 0;
   background: #5773ff;
   color: #fff;
@@ -163,7 +176,6 @@ export const SubmitButton = styled.button`
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin-right: 30px;
 `;
 
 export const PlusImg = styled.img`

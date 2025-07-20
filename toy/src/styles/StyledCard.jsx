@@ -34,17 +34,11 @@ export const Header = styled.div`
 export const People = styled.div`
   width: 18.424px;
   height: 20.353px;
-  svg {
-    flex-shrink: 0;
-    fill: ${({ hdColor }) => hdColor || "#5061ff"};
-    stroke-width: 20px;
-    stroke: ${({ hdColor }) => hdColor || "#5061ff"};
-  }
-  margin: 10px;
+  margin: 10px 5px;
 `;
 
 export const Text = styled.div`
-  margin-top: 8px;
+  margin-top: 15px;
   color: ${({ hdColor }) => hdColor || "#5061ff"};
   font-family: "BMJUA";
   font-size: 20px;
