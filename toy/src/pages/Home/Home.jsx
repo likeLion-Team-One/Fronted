@@ -16,6 +16,7 @@ const Home = () => {
   const goScrap = () => {
     navigate(`/scrap`);
   };
+
   return (
     <H.Container>
       <H.Bar>

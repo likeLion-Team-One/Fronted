@@ -1,12 +1,21 @@
 import * as C from "../../styles/StyledCard";
 
 const Card = ({ header, image, bgColor, borderColor, shadowColor, hdColor, people, progress, statusText, statusColor, children }) => {
+  const getImage = (hdColor) => {
+    switch (bgColor) {
+      case "#5061ff":
+        return `${process.env.PUBLIC_URL}/image/people.svg`;
+      case "#fff":
+        return `${process.env.PUBLIC_URL}/image/people2.png`;
+    }
+  };
+
   return (
     <C.CardWrapper>
       <C.Card bgColor={bgColor} borderColor={borderColor} shadowColor={shadowColor} hdColor={hdColor}>
         <C.Header hdColor={hdColor}>{header}</C.Header>
         <C.People hdColor={hdColor}>
-          <img src={`${process.env.PUBLIC_URL}/image/people.svg`} alt="logo" width="18px" style={{ marginTop: "5px" }} />
+          <img src={getImage(hdColor)} alt="logo" width="18px" style={{ marginTop: "5px" }} />
         </C.People>
         <C.Text hdColor={hdColor}>{people}</C.Text>
         <C.Icon>
