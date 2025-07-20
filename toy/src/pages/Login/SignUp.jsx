@@ -96,6 +96,14 @@ const SignUp = () => {
     }
   };
 
+  const onChangePhone = (e) => {
+    setphone(e.target.value);
+  };
+
+  const onChangemail = (e) => {
+    setEmail(e.target.value);
+  };
+
   const onChangeUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -165,14 +173,14 @@ const SignUp = () => {
         <SU.InputWrapper>
           <SU.Text>전화번호</SU.Text>
           <SU.Input>
-            <input id="phone" name="phone" value={phone}></input>
+            <input id="phone" name="phone" value={phone} onChange={onChangePhone}></input>
           </SU.Input>
         </SU.InputWrapper>
 
         <SU.InputWrapper>
           <SU.Text>메일 주소</SU.Text>
           <SU.Input>
-            <input id="email" name="email" value={email}></input>
+            <input id="email" name="email" value={email} onChange={onChangemail}></input>
           </SU.Input>
         </SU.InputWrapper>
 
